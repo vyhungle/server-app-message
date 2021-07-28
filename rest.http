@@ -1,0 +1,48 @@
+### Đăng ký
+POST http://localhost:4000/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"vyhungle2",
+    "password":"vykt2000",
+    "confirmPassword":"vykt2000",
+    "email":"lnhv.26112000@gmail.com"
+}
+
+
+#### Đăng nhập
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"vyhungle",
+    "password":"vykt2000"
+}
+
+### get room by Id
+GET  http://localhost:4000/api/room/get-room/60fe7afbeda70d08d04e66d2
+
+
+### create room
+POST http://localhost:4000/api/room/create-room
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ODRlMmQ0ZjBmNDAwY2I1ODIxNyIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlIiwiaWF0IjoxNjI3Mjg0MDE4LCJleHAiOjE2Mjg0OTM2MTh9.EuQLY-vWbfpYj4H5R_OxcN7zU1gLz0pObm9Fr-qwnvc
+Content-Type: application/json
+
+{
+    "userId":"60fe5fb5d71df81e8cc559dd"
+}
+
+
+
+### get my rooms
+GET http://localhost:4000/api/room/get-my-rooms
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ODRlMmQ0ZjBmNDAwY2I1ODIxNyIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlIiwiaWF0IjoxNjI3Mjg0MDE4LCJleHAiOjE2Mjg0OTM2MTh9.EuQLY-vWbfpYj4H5R_OxcN7zU1gLz0pObm9Fr-qwnvc
+
+### send message
+POST http://localhost:4000/api/message/60fe82c6cf43cb0ef0da293d/send-message
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ODRlMmQ0ZjBmNDAwY2I1ODIxNyIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlIiwiaWF0IjoxNjI3Mjg0MDE4LCJleHAiOjE2Mjg0OTM2MTh9.EuQLY-vWbfpYj4H5R_OxcN7zU1gLz0pObm9Fr-qwnvc
+Content-Type: application/json
+
+{
+    "body":"hello"
+}
