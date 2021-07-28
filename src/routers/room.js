@@ -38,7 +38,10 @@ router.get("/get-room/:id", async (req, res) => {
 // @access private
 router.get("/get-my-rooms", verifyToken, async (req, res) => {
   try {
-    const rooms = await Room.find();
+    const rooms = await Room.find().populate("users.userId", [
+      "_id",
+      "username",
+    ]);
     const myRooms = [];
     for (const room of rooms) {
       if (checkIsRoom(req.userId, room)) {
