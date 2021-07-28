@@ -41,8 +41,11 @@ router.get("/get-my-rooms", verifyToken, async (req, res) => {
     const rooms = await Room.find();
     const myRooms = [];
     for (const room of rooms) {
-      if (checkIsRoom(req.userId, room)) myRooms.push(room);
+      if (checkIsRoom(req.userId, room)) {
+        myRooms.push(room);
+      }
     }
+
     return res.status(200).json({
       access: true,
       message: "get my rooms",

@@ -59,7 +59,9 @@ export function getIdRoom(from, to, room) {
 
 export function checkIsRoom(id, room) {
   for (const item of room.users) {
-    if (item == id) return true;
+    if (item.userId == id && item.exist == true) {
+      return true;
+    }
   }
   return false;
 }
