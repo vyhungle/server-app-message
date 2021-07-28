@@ -14,19 +14,19 @@ router.get("/get-room/:id", async (req, res) => {
     const room = await Room.findById(req.params.id);
     if (room) {
       return res.status(200).json({
-        access: true,
+        success: true,
         message: "get room id",
         room,
       });
     }
     return res.status(404).json({
-      access: false,
+      success: false,
       message: "get room id",
       error: "Không tìm thấy phòng này, vui lòng thử lại.",
     });
   } catch (error) {
     return res.status(500).json({
-      access: false,
+      success: false,
       message: "get room id",
       error: "Server error!",
     });
@@ -47,13 +47,13 @@ router.get("/get-my-rooms", verifyToken, async (req, res) => {
     }
 
     return res.status(200).json({
-      access: true,
+      success: true,
       message: "get my rooms",
       rooms: myRooms,
     });
   } catch (error) {
     return res.status(500).json({
-      access: false,
+      success: false,
       message: "get my rooms",
       error: "Server error!",
     });
@@ -71,7 +71,7 @@ router.post("/create-room", verifyToken, async (req, res) => {
 
     if (getIdRoom(req.userId, userId, room) !== "") {
       return res.status(200).json({
-        access: true,
+        success: true,
         message: "create room",
         roomId: getIdRoom(req.userId, userId, room),
       });
@@ -87,13 +87,13 @@ router.post("/create-room", verifyToken, async (req, res) => {
     });
     await newMessage.save();
     return res.status(201).json({
-      access: true,
+      success: true,
       message: "create room",
       roomId: newRoom._id,
     });
   } catch (error) {
     return res.status(500).json({
-      access: false,
+      success: false,
       message: "create room",
       error: "Server error!",
     });
