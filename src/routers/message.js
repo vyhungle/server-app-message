@@ -21,19 +21,19 @@ router.post("/:id/send-message", verifyToken, async (req, res) => {
       message.messages.push(content);
       message.save();
       return res.status(201).json({
-        access: true,
+        success: true,
         message: "send message",
         sendContent: content,
       });
     }
     return res.status(404).json({
-      access: false,
+      success: false,
       message: "send message",
       error: "Không tìm thấy phòng này, vui lòng thử lại!",
     });
   } catch (error) {
     return res.status(500).json({
-      access: false,
+      success: false,
       message: "create message",
       error: "Server error!",
     });
