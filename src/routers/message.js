@@ -18,7 +18,7 @@ router.post("/:id/send-message", verifyToken, async (req, res) => {
     };
 
     if (message) {
-      message.messages.unshift(content);
+      message.messages.push(content);
       message.save();
       return res.status(201).json({
         access: true,
