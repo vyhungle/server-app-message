@@ -45,7 +45,10 @@ router.post("/:id/send-message", verifyToken, async (req, res) => {
 // @access Private
 router.get("/:id", async (req, res) => {
   try {
-    const response = await Message.findOne({ roomId: req.params.id },"messages");
+    const response = await Message.findOne(
+      { roomId: req.params.id },
+      "messages"
+    ).populate("messages.user", ["username", "profile"]);
     if (response) {
       return res.status(200).json({
         success: true,
