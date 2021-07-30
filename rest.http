@@ -46,3 +46,7 @@ Content-Type: application/json
 {
     "body":"hello"
 }
+
+### get message by id
+GET http://localhost:4000/api/message/60fe8372aa41173eec747ad8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ODRlMmQ0ZjBmNDAwY2I1ODIxNyIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlIiwiaWF0IjoxNjI3NDYyMjE3LCJleHAiOjE2Mjg2NzE4MTd9.Qga4emQtUvvtVp7tGwV32E8anzCeubZdKz88axTEQ70

@@ -39,4 +39,31 @@ router.post("/:id/send-message", verifyToken, async (req, res) => {
     });
   }
 });
+
+// @route GET api/message/:id
+// @desc get message
+// @access Private
+router.get("/:id", async (req, res) => {
+  try {
+    const message = await Message.findOne({ roomId: req.params.id }).populate("roomId");
+    if (message) {
+      return res.status(200).json({
+        success: true,
+        message: "get message by id",
+        message,
+      });
+    }
+    return res.status(404).json({
+      success: false,
+      message: "get message by id",
+      error: "Không tìm thấy phòng này, vui lòng thử lại.",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "get room by id",
+      error: "Server error!",
+    });
+  }
+});
 module.exports = router;
