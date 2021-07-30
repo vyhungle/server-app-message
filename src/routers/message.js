@@ -23,7 +23,13 @@ router.post("/:id/send-message", verifyToken, async (req, res) => {
       return res.status(201).json({
         success: true,
         message: "send message",
-        sendContent: content,
+        sendContent: {
+          body,
+          user: {
+            _id: req.userId,
+          },
+          createdAt: new Date().toISOString(),
+        },
       });
     }
     return res.status(404).json({
