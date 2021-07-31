@@ -79,16 +79,19 @@ router.post("/create-room", verifyToken, async (req, res) => {
         roomId: getIdRoom(req.userId, userId, room),
       });
     }
+
     const newRoom = new Room({
       users,
       group: false,
       createdAt: new Date().toISOString(),
     });
     await newRoom.save();
+
     const newMessage = new Message({
       roomId: newRoom._id,
     });
     await newMessage.save();
+
     return res.status(201).json({
       success: true,
       message: "create room",
@@ -98,7 +101,7 @@ router.post("/create-room", verifyToken, async (req, res) => {
     return res.status(500).json({
       success: false,
       message: "create room",
-      error: "Server error!",
+      error: error,
     });
   }
 });

@@ -3,7 +3,7 @@ POST http://localhost:4000/api/auth/register
 Content-Type: application/json
 
 {
-    "username":"vyhungle",
+    "username":"messi",
     "password":"vykt2000",
     "confirmPassword":"vykt2000",
     "email":"lnhv.26112000@gmail.com"
@@ -15,7 +15,7 @@ POST http://localhost:4000/api/auth/login
 Content-Type: application/json
 
 {
-    "username":"vyhungle2",
+    "username":"ronaldo",
     "password":"vykt2000"
 }
 
@@ -25,11 +25,11 @@ GET  http://localhost:4000/api/room/get-room/60fe7afbeda70d08d04e66d2
 
 ### create room
 POST http://localhost:4000/api/room/create-room
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ODRlMmQ0ZjBmNDAwY2I1ODIxNyIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlIiwiaWF0IjoxNjI3Mjg0MDE4LCJleHAiOjE2Mjg0OTM2MTh9.EuQLY-vWbfpYj4H5R_OxcN7zU1gLz0pObm9Fr-qwnvc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ODRlMmQ0ZjBmNDAwY2I1ODIxNyIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlIiwiaWF0IjoxNjI3NjU1ODgzLCJleHAiOjE2Mjg4NjU0ODN9.kLQ94htH_s95R5S2qp7cxDubMMY8nzPPWzrEdq-k05A
 Content-Type: application/json
 
 {
-    "userId":"60fe5fb5d71df81e8cc559dd"
+    "userId":"61040ddbae25af1330946b67"
 }
 
 
@@ -39,12 +39,12 @@ GET http://localhost:4000/api/room/get-my-rooms
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ODRlMmQ0ZjBmNDAwY2I1ODIxNyIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlIiwiaWF0IjoxNjI3NDYyMjE3LCJleHAiOjE2Mjg2NzE4MTd9.Qga4emQtUvvtVp7tGwV32E8anzCeubZdKz88axTEQ70
 
 ### send message
-POST http://localhost:4000/api/message/60fe8372aa41173eec747ad8/send-message
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ZmI1ZDcxZGY4MWU4Y2M1NTlkZCIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlMiIsImlhdCI6MTYyNzYzMzc4NiwiZXhwIjoxNjI4ODQzMzg2fQ.EMvfCpZqzOkDM4wtJlwsadkRvGiLlMLYojRBie4ljq0
+POST http://localhost:4000/api/message/6104135c62d3281e4074fed3/send-message
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQwN2Y1ZDEzNzcyMzlhNDkxNTg3ZSIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InJvbmFsZG8iLCJpYXQiOjE2Mjc2NTcyMDAsImV4cCI6MTYyODg2NjgwMH0.RAdW8IapPLs3YvxlJhJKra2ExmbgFjuPYUduEzWiqag
 Content-Type: application/json
 
 {
-    "body":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    "body":"Lorem Ipsum is simply dummy text of the printing."
 }
 
 ### get message by id eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZmU1ZmI1ZDcxZGY4MWU4Y2M1NTlkZCIsImVtYWlsIjoibG5odi4yNjExMjAwMEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InZ5aHVuZ2xlMiIsImlhdCI6MTYyNzYzMzc4NiwiZXhwIjoxNjI4ODQzMzg2fQ.EMvfCpZqzOkDM4wtJlwsadkRvGiLlMLYojRBie4ljq0
